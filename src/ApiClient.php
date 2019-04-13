@@ -39,7 +39,7 @@ class ApiClient
      */
     public function request(string $method, string $endpoint, array $data) : ?array
     {
-        $client = $this->httpClient ?: HttpClientDiscovery::find();
+        $client = $this->httpClient ?? HttpClientDiscovery::find();
         $messageFactory = MessageFactoryDiscovery::find();
 
         $url = 'http://178.62.21.9/' . $endpoint;
