@@ -1,8 +1,8 @@
 <?php
 use PHPUnit\Framework\TestCase;
-use Http\Mock\Client as MockClient;
-use Http\Discovery\HttpClientDiscovery;
-use Http\Discovery\Strategy\MockClientStrategy;
+use Http\Client\Curl\Client;
+use Http\Discovery\MessageFactoryDiscovery;
+use Http\Discovery\StreamFactoryDiscovery;
 
 /**
  * ApiClient Test
@@ -12,7 +12,10 @@ class ApiClientTest extends TestCase
 {
     public function setUp()
     {
-        HttpClientDiscovery::prependStrategy(MockClientStrategy::class);
+        $client = new Client(MessageFactoryDiscovery::find(), StreamFactoryDiscovery::find());
+        $this->authenticator = new OpenBlock\Api\Authenticator("test");
+        $this->apiClient = new OpenBlock\Api\ApiClient($this->authenticator);
+        $this->apiClient->setClient($client);
     }
 
     /**
@@ -35,10 +38,7 @@ class ApiClientTest extends TestCase
         $nonce = 0;
         $data = ['test'];
 
-        $authenticator = new OpenBlock\Api\Authenticator("test");
-        $apiClient = new OpenBlock\Api\ApiClient($authenticator);
-        $signature = $apiClient->signRequest($method, $url, $nonce, $data);
-
+        $signature = $this->apiClient->signRequest($method, $url, $nonce, $data);
         $this->assertTrue(is_string($signature));
     }
 
@@ -50,9 +50,8 @@ class ApiClientTest extends TestCase
         $method = "POST";
         $data = ['test'];
 
-        $authenticator = new OpenBlock\Api\Authenticator("test");
-        $apiClient = new OpenBlock\Api\ApiClient($authenticator);
-        $response = $apiClient->request("POST", "register", $data);
-        $this->assertNull($response);
+        $response = $this->apiClient->request("POST", "register", $data);
+        $this->assertNotNull($response);
+        $this->assertFalse($response['success']);
     }
 }

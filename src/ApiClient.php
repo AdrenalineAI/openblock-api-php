@@ -4,6 +4,7 @@
  */
 namespace OpenBlock\Api;
 
+use Http\Client\HttpClient;
 use Http\Discovery\HttpClientDiscovery;
 use Http\Discovery\MessageFactoryDiscovery;
 
@@ -13,6 +14,11 @@ class ApiClient
      * @@var Authenticator|null Authentication Creation Object
      */
     private $authenticator;
+
+    /**
+     * @var HttpClient
+     */
+    private $httpClient;
 
     /**
      * Constructor which takes a request factory and an authentication class
@@ -33,7 +39,7 @@ class ApiClient
      */
     public function request(string $method, string $endpoint, array $data) : ?array
     {
-        $client = HttpClientDiscovery::find();
+        $client = $this->httpClient ?: HttpClientDiscovery::find();
         $messageFactory = MessageFactoryDiscovery::find();
 
         $url = 'http://178.62.21.9/' . $endpoint;
@@ -43,7 +49,8 @@ class ApiClient
         $headers = [
             'X-API-NONCE' => $nonce,
             'X-API-KEY' => $this->authenticator->getPublicKey(),
-            'X-API-SIGNATURE' => $signature
+            'X-API-SIGNATURE' => $signature,
+            'Content-Type' => 'application/json',
         ];
 
         // Send Request
@@ -53,8 +60,8 @@ class ApiClient
             $headers,
             http_build_query($data)
         );
-        $response = $client->sendRequest($request)->getBody();
-        return json_decode($response);
+        $response = $client->sendRequest($request);
+        return json_decode((string) $response->getBody(), true);
     }
 
     /**
@@ -70,6 +77,17 @@ class ApiClient
         $data['method'] = $method;
         $data['url'] = $url;
         return $this->authenticator->sign($data);
+    }
+
+    /**
+     * Set the Custom Client
+     * @param HttpClient $client HttpClient Instance
+     * @return ApiClient
+     */
+    public function setClient(HttpClient $client)
+    {
+        $this->httpClient = $client;
+        return $this;
     }
 }
 
