@@ -40,4 +40,22 @@ class AuthenticatorTest extends TestCase
         $this->assertTrue($var->verify($data, $signature));
     }
 
+    /**
+     * Test To Ensure we can get the public key
+     */
+    public function testGetPublicKey()
+    {
+        $var = new OpenBlock\Api\Authenticator("test");
+        $this->assertTrue(is_string($var->getPublicKey()));
+    }
+
+    /**
+     * Test To Ensure we can get the secret
+     */
+    public function testGetPrivateKey()
+    {
+        $var = new OpenBlock\Api\Authenticator("test");
+        $this->assertTrue(is_string($var->getPrivateKey()));
+    }
+
 }
