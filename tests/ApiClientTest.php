@@ -1,8 +1,7 @@
 <?php
 use PHPUnit\Framework\TestCase;
-use Http\Client\Curl\Client;
-use Http\Discovery\MessageFactoryDiscovery;
-use Http\Discovery\StreamFactoryDiscovery;
+use Http\Adapter\Buzz\Client as BuzzAdapter;
+use Buzz\Browser;
 
 /**
  * ApiClient Test
@@ -12,7 +11,8 @@ class ApiClientTest extends TestCase
 {
     public function setUp()
     {
-        $client = new Client(MessageFactoryDiscovery::find(), StreamFactoryDiscovery::find());
+        $browser = new Browser();
+        $client = new BuzzAdapter($browser);
         $this->authenticator = new OpenBlock\Api\Authenticator("test");
         $this->apiClient = new OpenBlock\Api\ApiClient($this->authenticator);
         $this->apiClient->setClient($client);
