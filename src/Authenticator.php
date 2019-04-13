@@ -1,4 +1,7 @@
 <?php
+/**
+ *  File containing Authentication Related Methods
+ */
 namespace OpenBlock\Api;
 
 use Elliptic\EdDSA;
@@ -10,7 +13,14 @@ use Elliptic\EdDSA;
  */
 class Authenticator
 {
+    /**
+     * @var EdDSA|null ed25519 Curve Class
+     */
     private $ec;
+
+    /**
+     * @var \Elliptic\EdDSA\KeyPair KeyPair from sha256 hashed secret
+     */
     private $keyPair;
 
     /**
