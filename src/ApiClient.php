@@ -37,7 +37,7 @@ class ApiClient
      * @param array $data HTTP Request Data
      * @return array JSON Ressponse Data
      */
-    public function request(string $method, string $endpoint, array $data) : ?array
+    public function request(string $method, string $endpoint, array $data) : array
     {
         $client = $this->httpClient ?? HttpClientDiscovery::find();
         $messageFactory = MessageFactoryDiscovery::find();
@@ -61,7 +61,7 @@ class ApiClient
             http_build_query($data)
         );
         $response = $client->sendRequest($request);
-        return json_decode((string) $response->getBody(), true);
+        return (array) json_decode((string) $response->getBody(), true);
     }
 
     /**
