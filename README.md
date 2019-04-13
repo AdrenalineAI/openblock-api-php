@@ -1,4 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/github/OpenBlock-Org/openblock-api-php/badge.svg?branch=master)](https://coveralls.io/github/OpenBlock-Org/openblock-api-php?branch=master)
+[![codecov](https://codecov.io/gh/OpenBlock-Org/openblock-api-php/branch/master/graph/badge.svg)](https://codecov.io/gh/OpenBlock-Org/openblock-api-php)
 [![Build Status](https://travis-ci.org/OpenBlock-Org/openblock-api-php.svg?branch=master)](https://travis-ci.org/OpenBlock-Org/openblock-api-php)
 
 # OpenBlock-Api-php
