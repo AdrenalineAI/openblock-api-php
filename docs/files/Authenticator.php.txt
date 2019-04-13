@@ -1,0 +1,68 @@
+<?php
+namespace OpenBlock\Api;
+
+use Elliptic\EdDSA;
+
+/**
+ * Class to Create a keypair and sign requests
+ * Uses ed25519 to create a keypair from a sha256 hashed secret
+ * @author Ahmed Bodiwala <ahmedbodi@crypto-expert.com>
+ */
+class Authenticator
+{
+    private $ec;
+    private $keyPair;
+
+    /**
+     * Constructor which takes a secret and generates a keypair
+     * @param string $secret Secret for keypair creation
+     */
+    public function __construct(string $secret)
+    {
+        // Hash the secret to get a consistent length
+        $secretHash = hash('sha256', $secret);
+        $this->ec = new EdDSA('ed25519');
+        $this->keyPair = $this->ec->keyFromSecret($secretHash);
+    }
+
+    /**
+     * Sign the request data with the stored keypair
+     * @param array $data Data in the Request
+     * @return string Signature of the data signed with private key
+     */
+    public function sign(array $data) : string
+    {
+        return $this->keyPair->sign($data)->toHex();
+    }
+
+    /**
+     * Verify that the signature matches the data
+     * @param array $data Data in the request
+     * @param string $signature Signature of the data
+     * @return bool Is Signature Valid
+     */
+    public function verify(array $data, string $signature) : bool
+    {
+        return $this->keyPair->verify($data, $signature);
+    }
+
+    /**
+     * Get the Public Key from the keypair
+     * @return string Public Key
+     */
+    public function getPublicKey(): string
+    {
+        return $this->keyPair->getPublic('hex');
+    }
+
+    /**
+     * Get the Secret from the private key
+     * @return string Secret
+     */
+    public function getPrivateKey(): string
+    {
+        return $this->keyPair->getSecret('hex');
+    }
+}
+
+
