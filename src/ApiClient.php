@@ -31,6 +31,46 @@ class ApiClient
     }
 
     /**
+     * Register wih openblock
+     * @param string $username Username to register with
+     * @param string $email Email to register with
+     * @return array
+     */
+    public function register(string $username, string $email)
+    {
+        return $this->request("POST", "register", [
+            'username' => $username,
+            'email' => $email,
+            'public_key' => $this->authenticator->getPublicKey(),
+        ]);
+    }
+
+    /**
+     * Login to the site
+     * @param string $username Username to login with
+     * @return array
+     */
+    public function login(string $username)
+    {
+        return $this->request("POST", "login", [
+            'username' => $username,
+            'public_key' => $this->authenticator->getPublicKey(),
+        ]);
+    }
+
+    /**
+     * Request a password reset
+     * @param string $email Email Address you reigstered with
+     * @return array
+     */
+    public function forgotPassword(string $email)
+    {
+        return $this->request("POST", "forgot-password", [
+            'email' => $email,
+        ]);
+    }
+
+    /**
      * Create a new signed request and return the response
      * @param string $method HTTP Method
      * @param string $endpoint HTTP Endpoint
@@ -50,7 +90,8 @@ class ApiClient
             'X-API-NONCE' => $nonce,
             'X-API-KEY' => $this->authenticator->getPublicKey(),
             'X-API-SIGNATURE' => $signature,
-            'Content-Type' => 'application/json',
+            'Content-Type' => 'application/x-www-form-urlencoded',
+
         ];
 
         // Send Request

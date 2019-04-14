@@ -9,13 +9,24 @@ use Buzz\Browser;
  */
 class ApiClientTest extends TestCase
 {
-    public function setUp()
+    protected static $authenticator;
+    protected static $apiClient;
+    protected static $username;
+    protected static $email;
+    protected static $secret;
+
+    public static function setUpBeforeClass()
     {
+        $secret = substr(str_shuffle('ABCDEFGHIJKLMNOPQRSTUVWXYZ'),1, 10);
         $browser = new Browser();
         $client = new BuzzAdapter($browser);
-        $this->authenticator = new OpenBlock\Api\Authenticator("test");
-        $this->apiClient = new OpenBlock\Api\ApiClient($this->authenticator);
-        $this->apiClient->setClient($client);
+        self::$authenticator = new OpenBlock\Api\Authenticator($secret);
+        self::$apiClient = new OpenBlock\Api\ApiClient(self::$authenticator);
+        self::$apiClient->setClient($client);
+
+        self::$username = substr(str_shuffle('ABCDEFGHIJKLMNOPQRSTUVWXYZ'),1, 10);
+        self::$email = self::$username . "@test.com";
+
     }
 
     /**
@@ -38,7 +49,7 @@ class ApiClientTest extends TestCase
         $nonce = 0;
         $data = ['test'];
 
-        $signature = $this->apiClient->signRequest($method, $url, $nonce, $data);
+        $signature = self::$apiClient->signRequest($method, $url, $nonce, $data);
         $this->assertTrue(is_string($signature));
     }
 
@@ -50,8 +61,40 @@ class ApiClientTest extends TestCase
         $method = "POST";
         $data = ['test'];
 
-        $response = $this->apiClient->request("POST", "register", $data);
+        $response = self::$apiClient->request("POST", "register", $data);
         $this->assertNotNull($response);
         $this->assertFalse($response['success']);
     }
+
+    /**
+     * Test For A successful register
+     */
+    public function testRegister()
+    {
+        $response = self::$apiClient->register(self::$username, self::$email);
+        $this->assertTrue($response['success']);
+        $this->assertTrue(count($response['errors']) == 0);
+    }
+
+    /**
+     * Test for a successful login
+     */
+    public function testLogin()
+    {
+        $response = self::$apiClient->login(self::$username);
+        $this->assertTrue($response['success']);
+        $this->assertTrue(count($response['errors']) == 0);
+    }
+
+    /**
+     * Test for a successful forgot password request
+     */
+    public function testForgotPassword()
+    {
+        $response = self::$apiClient->forgotPassword(self::$email);
+        $this->assertTrue($response['success']);
+        $this->assertTrue(count($response['errors']) == 0);
+        $this->assertEquals($response['data']['email'], self::$email);
+    }
+
 }
