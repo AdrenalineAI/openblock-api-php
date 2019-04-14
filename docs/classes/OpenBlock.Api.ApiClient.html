@@ -144,28 +144,28 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-663290"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-435427291"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-663290" class="accordion-body collapse in">
+            <div id="namespace-435427291" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-371954601"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-211273067"></a>
                                 <a href="../namespaces/OpenBlock.html" style="margin-left: 30px; padding-left: 0">OpenBlock</a>
             </div>
-            <div id="namespace-371954601" class="accordion-body collapse ">
+            <div id="namespace-211273067" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-3282490"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2131838503"></a>
                                 <a href="../namespaces/OpenBlock.Api.html" style="margin-left: 30px; padding-left: 0">Api</a>
             </div>
-            <div id="namespace-3282490" class="accordion-body collapse ">
+            <div id="namespace-2131838503" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -205,9 +205,8 @@
                                             </nav>
                     <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
 
-                    <h1><small>\OpenBlock\Api</small>Authenticator</h1>
-                    <p><em>Class to Create a keypair and sign requests
-Uses ed25519 to create a keypair from a sha256 hashed secret</em></p>
+                    <h1><small>\OpenBlock\Api</small>ApiClient</h1>
+                    <p><em></em></p>
                     
                     
                                         
@@ -226,11 +225,13 @@ Uses ed25519 to create a keypair from a sha256 hashed secret</em></p>
                         </section>
                         <section class="row-fluid public">
                             <section class="span4">
-                                                                    <a href="../classes/OpenBlock.Api.Authenticator.html#method___construct" class="">__construct()</a><br />
-                                                                    <a href="../classes/OpenBlock.Api.Authenticator.html#method_sign" class="">sign()</a><br />
-                                                                    <a href="../classes/OpenBlock.Api.Authenticator.html#method_verify" class="">verify()</a><br />
-                                                                    <a href="../classes/OpenBlock.Api.Authenticator.html#method_getPublicKey" class="">getPublicKey()</a><br />
-                                                                    <a href="../classes/OpenBlock.Api.Authenticator.html#method_getPrivateKey" class="">getPrivateKey()</a><br />
+                                                                    <a href="../classes/OpenBlock.Api.ApiClient.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/OpenBlock.Api.ApiClient.html#method_register" class="">register()</a><br />
+                                                                    <a href="../classes/OpenBlock.Api.ApiClient.html#method_login" class="">login()</a><br />
+                                                                    <a href="../classes/OpenBlock.Api.ApiClient.html#method_forgotPassword" class="">forgotPassword()</a><br />
+                                                                    <a href="../classes/OpenBlock.Api.ApiClient.html#method_request" class="">request()</a><br />
+                                                                    <a href="../classes/OpenBlock.Api.ApiClient.html#method_signRequest" class="">signRequest()</a><br />
+                                                                    <a href="../classes/OpenBlock.Api.ApiClient.html#method_setClient" class="">setClient()</a><br />
                                                             </section>
                             <section class="span4">
                                                                     <em>No public properties found</em>
@@ -255,8 +256,8 @@ Uses ed25519 to create a keypair from a sha256 hashed secret</em></p>
                                                                     <em>No private methods found</em>
                                                             </section>
                             <section class="span4">
-                                                                    <a href="../classes/OpenBlock.Api.Authenticator.html#property_ec" class="">$ec</a><br />
-                                                                    <a href="../classes/OpenBlock.Api.Authenticator.html#property_keyPair" class="">$keyPair</a><br />
+                                                                    <a href="../classes/OpenBlock.Api.ApiClient.html#property_authenticator" class="">$authenticator</a><br />
+                                                                    <a href="../classes/OpenBlock.Api.ApiClient.html#property_httpClient" class="">$httpClient</a><br />
                                                             </section>
                             <section class="span4">
                                 <em>N/A</em>
@@ -269,12 +270,12 @@ Uses ed25519 to create a keypair from a sha256 hashed secret</em></p>
                     
                     <dl>
                         <dt>File</dt>
-                            <dd><a href="../files/Authenticator.html"><div class="path-wrapper">Authenticator.php</div></a></dd>
+                            <dd><a href="../files/ApiClient.html"><div class="path-wrapper">ApiClient.php</div></a></dd>
                                                 <dt>Package</dt>
                             <dd><div class="namespace-wrapper">Default</div></dd>
                                                 <dt>Class hierarchy</dt>
                             <dd class="hierarchy">
-                                                                                                                                                                    <div class="namespace-wrapper">\OpenBlock\Api\Authenticator</div>
+                                                                                                                                                                    <div class="namespace-wrapper">\OpenBlock\Api\ApiClient</div>
                             </dd>
 
                         
@@ -284,14 +285,7 @@ Uses ed25519 to create a keypair from a sha256 hashed secret</em></p>
                                                                         </dl>
                     <h2>Tags</h2>
                     <table class="table table-condensed">
-                                            <tr>
-                            <th>
-                                author
-                            </th>
-                            <td>
-                                                                    <p>Ahmed Bodiwala <a href="mailto:ahmedbodi@crypto-expert.com">ahmedbodi@crypto-expert.com</a></p>
-                                                            </td>
-                        </tr>
+                                            <tr><td colspan="2"><em>None found</em></td></tr>
                                         </table>
                 </aside>
             </div>
@@ -307,16 +301,16 @@ Uses ed25519 to create a keypair from a sha256 hashed secret</em></p>
 
                                                                     <div class="row-fluid">
         <div class="span8 content class">
-            <a id="property_ec" name="property_ec" class="anchor"></a>
+            <a id="property_authenticator" name="property_authenticator" class="anchor"></a>
             <article class="property">
-                <h3 class="private ">$ec</h3>
-                <pre class="signature">$ec : \Elliptic\EdDSA|null</pre>
+                <h3 class="private ">$authenticator</h3>
+                <pre class="signature">$authenticator : </pre>
                 <p><em></em></p>
                 
 
                                 <h4>Type</h4>
-                \Elliptic\EdDSA|null
-                &mdash; ed25519 Curve Class                            </article>
+                
+                                            </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
@@ -331,16 +325,16 @@ Uses ed25519 to create a keypair from a sha256 hashed secret</em></p>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
-            <a id="property_keyPair" name="property_keyPair" class="anchor"></a>
+            <a id="property_httpClient" name="property_httpClient" class="anchor"></a>
             <article class="property">
-                <h3 class="private ">$keyPair</h3>
-                <pre class="signature">$keyPair : \Elliptic\EdDSA\KeyPair</pre>
+                <h3 class="private ">$httpClient</h3>
+                <pre class="signature">$httpClient : \Http\Client\HttpClient</pre>
                 <p><em></em></p>
                 
 
                                 <h4>Type</h4>
-                \Elliptic\EdDSA\KeyPair
-                &mdash; KeyPair from sha256 hashed secret                            </article>
+                \Http\Client\HttpClient
+                                            </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
@@ -366,16 +360,16 @@ Uses ed25519 to create a keypair from a sha256 hashed secret</em></p>
             <article class="method">
                 <h3 class="public ">__construct()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">__construct(string  <span class="argument">$secret</span>) </pre>
-                <p><em>Constructor which takes a secret and generates a keypair</em></p>
+                <pre class="signature" style="margin-right: 54px;">__construct(\OpenBlock\Api\Authenticator  <span class="argument">$authenticator</span>) </pre>
+                <p><em>Constructor which takes a request factory and an authentication class</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td>string</td>
-                                <td>$secret </td>
-                                <td><p>Secret for keypair creation</p></td>
+                                <td><a href="../classes/OpenBlock.Api.Authenticator.html">\OpenBlock\Api\Authenticator</a></td>
+                                <td>$authenticator </td>
+                                <td><p>Authentication Object</p></td>
                             </tr>
                                             </table>
                 
@@ -396,69 +390,31 @@ Uses ed25519 to create a keypair from a sha256 hashed secret</em></p>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
-            <a id="method_sign" name="method_sign" class="anchor"></a>
+            <a id="method_register" name="method_register" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">sign()</h3>
+                <h3 class="public ">register()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">sign(array  <span class="argument">$data</span>) : string</pre>
-                <p><em>Sign the request data with the stored keypair</em></p>
+                <pre class="signature" style="margin-right: 54px;">register(string  <span class="argument">$username</span>, string  <span class="argument">$email</span>) : array</pre>
+                <p><em>Register wih openblock</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td>array</td>
-                                <td>$data </td>
-                                <td><p>Data in the Request</p></td>
-                            </tr>
-                                            </table>
-                
-                
-                                    <h4>Returns</h4>
-                    string
-                                            &mdash; <p>Signature of the data signed with private key</p>
-                                    				
-                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                                                            <dl>
-                                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="method_verify" name="method_verify" class="anchor"></a>
-            <article class="method">
-                <h3 class="public ">verify()</h3>
-                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">verify(array  <span class="argument">$data</span>, string  <span class="argument">$signature</span>) : boolean</pre>
-                <p><em>Verify that the signature matches the data</em></p>
-                
-
-                                    <h4>Parameters</h4>
-                    <table class="table table-condensed table-hover">
-                                                    <tr>
-                                <td>array</td>
-                                <td>$data </td>
-                                <td><p>Data in the request</p></td>
+                                <td>string</td>
+                                <td>$username </td>
+                                <td><p>Username to register with</p></td>
                             </tr>
                                                     <tr>
                                 <td>string</td>
-                                <td>$signature </td>
-                                <td><p>Signature of the data</p></td>
+                                <td>$email </td>
+                                <td><p>Email to register with</p></td>
                             </tr>
                                             </table>
                 
                 
                                     <h4>Returns</h4>
-                    boolean
-                                            &mdash; <p>Is Signature Valid</p>
+                    array
                                     				
                             </article>
         </div>
@@ -475,19 +431,26 @@ Uses ed25519 to create a keypair from a sha256 hashed secret</em></p>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
-            <a id="method_getPublicKey" name="method_getPublicKey" class="anchor"></a>
+            <a id="method_login" name="method_login" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">getPublicKey()</h3>
+                <h3 class="public ">login()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">getPublicKey() : string</pre>
-                <p><em>Get the Public Key from the keypair</em></p>
+                <pre class="signature" style="margin-right: 54px;">login(string  <span class="argument">$username</span>) : array</pre>
+                <p><em>Login to the site</em></p>
                 
 
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$username </td>
+                                <td><p>Username to login with</p></td>
+                            </tr>
+                                            </table>
                 
                 
                                     <h4>Returns</h4>
-                    string
-                                            &mdash; <p>Public Key</p>
+                    array
                                     				
                             </article>
         </div>
@@ -504,19 +467,158 @@ Uses ed25519 to create a keypair from a sha256 hashed secret</em></p>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
-            <a id="method_getPrivateKey" name="method_getPrivateKey" class="anchor"></a>
+            <a id="method_forgotPassword" name="method_forgotPassword" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">getPrivateKey()</h3>
+                <h3 class="public ">forgotPassword()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">getPrivateKey() : string</pre>
-                <p><em>Get the Secret from the private key</em></p>
+                <pre class="signature" style="margin-right: 54px;">forgotPassword(string  <span class="argument">$email</span>) : array</pre>
+                <p><em>Request a password reset</em></p>
                 
 
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$email </td>
+                                <td><p>Email Address you reigstered with</p></td>
+                            </tr>
+                                            </table>
                 
                 
                                     <h4>Returns</h4>
-                    string
-                                            &mdash; <p>Secret</p>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_request" name="method_request" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">request()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">request(string  <span class="argument">$method</span>, string  <span class="argument">$endpoint</span>, array  <span class="argument">$data</span>) : array</pre>
+                <p><em>Create a new signed request and return the response</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$method </td>
+                                <td><p>HTTP Method</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$endpoint </td>
+                                <td><p>HTTP Endpoint</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$data </td>
+                                <td><p>HTTP Request Data</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>JSON Ressponse Data</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_signRequest" name="method_signRequest" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">signRequest()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">signRequest(string  <span class="argument">$method</span>, string  <span class="argument">$url</span>, integer  <span class="argument">$nonce</span>, array  <span class="argument">$data</span>) </pre>
+                <p><em>Sign Request Data and return the signature</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$method </td>
+                                <td><p>HTTP Method to use</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$url </td>
+                                <td><p>Full URL</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$nonce </td>
+                                <td><p>Nonce in Request</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$data </td>
+                                <td><p>HTTP Request Data</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setClient" name="method_setClient" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setClient()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setClient(\Http\Client\HttpClient  <span class="argument">$client</span>) : \OpenBlock\Api\ApiClient</pre>
+                <p><em>Set the Custom Client</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\Http\Client\HttpClient</td>
+                                <td>$client </td>
+                                <td><p>HttpClient Instance</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/OpenBlock.Api.ApiClient.html">\OpenBlock\Api\ApiClient</a>
                                     				
                             </article>
         </div>
@@ -537,10 +639,10 @@ Uses ed25519 to create a keypair from a sha256 hashed secret</em></p>
     <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3 id="source-view-label">Authenticator.php</h3>
+            <h3 id="source-view-label">ApiClient.php</h3>
         </div>
         <div class="modal-body">
-            <pre data-src="../files/Authenticator.php.txt" class="language-php line-numbers"></pre>
+            <pre data-src="../files/ApiClient.php.txt" class="language-php line-numbers"></pre>
         </div>
     </div>
 
